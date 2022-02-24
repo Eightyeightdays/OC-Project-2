@@ -1,5 +1,109 @@
-html{
-    box-sizing: border-box; /* NOT WORKING!!!!!!!!!!! */
+:root{
+    --border-radius: 20px;
+    --margin-full: 60px;
+    --margin-half: calc(var(--margin-full)/2);
+    --padding-full: var(--margin-full);
+    --padding-half: var(--margin-half);
+    --background: #F2F2F2;;
+    --accent: #0065FC;
+    --accent-light: #DEEBFF;
+    font-family: Raleway;
+}
+
+input[type="text"]{
+    border: 1px solid var(--background);
+    padding-left: 10px;
+}
+input[type="text"]:focus{
+    outline: none;
+}
+a{
+    text-decoration: none;
+}
+a:visited{
+    color: initial;
+}
+header{
+    justify-content: flex-end;
+}
+.logo{
+    width: 100px;
+ }
+ .logo-container{
+    position: absolute;
+    left: 0;
+    height: min-content;
+}
+#nav-links{
+    min-width: 320px;
+}
+ .link{
+    border-top: 4px solid transparent;
+    width: 100%;
+}
+.link:hover{
+    border-top: 4px solid var(--accent);
+    color: var(--accent);
+}
+.search-element{
+    height: 50px;
+}
+.fa-map-marker-alt{
+    font-size: 20px;
+}
+.circle{
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+}
+
+.circle-top{
+    z-index: 3;
+    background: var(--accent-light);
+    height: 50px;
+    width: 50px;
+    font-size: 20px;
+}
+
+.circle-bottom{
+    position: relative;
+    left: -50px;
+    z-index: 0;
+    border: 3px solid var(--background);
+    background: white;
+    margin-right: -50px;
+}
+.small-circle{
+    border: 2px solid var(--background);
+    border-radius: 50%;
+    min-width: 30px;
+    min-height: 30px;
+    margin-right: 10px;
+}
+.box{
+    position: relative;
+    left: -27px;
+    height: 50px;
+    border-top: 3px solid var(--background);
+    border-bottom: 3px solid var(--background);
+    z-index: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background: white;
+    padding-left: 40px;
+    padding-right: 10px;
+}
+.title{
+    font-size: 22px; 
+    font-weight: bold;
+}
+.bold{
+    font-weight: bold;
+}
+
+.shadow{
+    box-shadow: 0 5px 35px 3px HSL(0, 0%, 90%);
 }
 
 .acc-container{
@@ -19,7 +123,7 @@ html{
     border-radius: 20px;
     margin: 10px;
     width: calc(33.33% - 20px);
-    height: 300px;
+    height: calc(50% - 20px);
     overflow: hidden;
 }
 .img-main{
@@ -44,4 +148,152 @@ html{
     object-fit: cover;
     width: 40%;
     height: 100%;
+}
+
+
+
+
+/* FLEXBOX */
+
+.flex{
+    display: flex;
+}
+.horizontal{
+    flex-direction: row;
+}
+.vertical{
+    flex-direction: column;
+}
+.centered{
+    justify-content: center;
+}
+.aligned{
+    align-items: center;
+}
+.wrap{
+    flex-wrap: wrap;
+}
+.basis{
+    flex: 1;
+}
+
+/* MARGINS */
+
+.margin-l{
+    margin: var(--margin-full);
+}
+.margin-top-s{
+    margin-top: 10px;
+}
+.margin-top-l{
+    margin-top: 30px;
+} 
+
+.padding-l{
+    padding: 20px;
+}
+
+.gap{
+    gap: 30px;
+}
+
+
+.transparent{
+    color: white;
+}
+
+.fa-search{
+    color: transparent;
+    font-size: 0;
+}
+#location-icon{
+    background: var(--background);
+    padding: 25px;
+    border-top-left-radius: var(--border-radius);
+    border-bottom-left-radius: var(--border-radius);
+}
+
+#search-button{
+    background: var(--accent);
+    border-top-right-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius);
+    padding: 15px;
+}
+
+/* MEDIA QUERIES */
+
+@media (max-width: 767px){
+    :root{
+        font-size: 16px;
+    }
+    header{
+        flex-direction: column;
+    }
+    .logo-container{
+        position: relative;
+    }
+    #nav-links{
+        width: 100%;
+        margin: 0;
+    }
+    .link{
+        border-bottom: 4px solid var(--background);
+        border-top: 4px solid transparent;
+    }
+    .link:hover{
+        border-top: 4px solid transparent;
+        border-bottom: 4px solid var(--accent);
+    }
+   
+    #search-bar{
+        width: calc(100% + 20px);   /* to compensate for moving the button left by 20px */
+        position: relative;
+        
+    }
+    input[type="text"]{
+        width: 100%;
+        font-size: 18px;
+        border-right: 1px solid transparent;
+        z-index: 1;
+    }
+    ::placeholder{
+        color: black;
+        opacity: 1;
+    }
+    #search-button{
+        position: absolute;
+        right: 20px;        /* in order to cover input section */
+        border-radius: var(--border-radius);
+        position: relative;
+        width: 60px;
+        z-index: 2;
+    }
+    .transparent{
+        color: transparent;
+    }
+    #magnify{
+        display: block;
+        position: relative;
+        left: -45px;
+        /* background: red; */
+        color: white;
+        font-size: 18px;
+    }
+    .margin-m{
+        margin: 5px;
+    }
+    #filter-box{
+        margin-top: 10px;
+    }
+    #filter-label{
+        margin-top: 20px;
+        margin-bottom: 0px;
+        margin-right: 100%;
+    }
+    .gap{
+        gap: 15px;
+    }
+    #search{
+        margin: 20px;
+    }
 }
