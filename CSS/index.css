@@ -4,7 +4,7 @@
     --margin-half: calc(var(--margin-full)/2);
     --padding-full: var(--margin-full);
     --padding-half: var(--margin-half);
-    --background: #F2F2F2;;
+    --background: #F2F2F2;
     --accent: #0065FC;
     --accent-light: #DEEBFF;
     font-family: Raleway;
@@ -23,6 +23,7 @@ a{
 a:visited{
     color: initial;
 }
+
 header{
     justify-content: flex-end;
 }
@@ -44,6 +45,10 @@ header{
 .link:hover{
     border-top: 4px solid var(--accent);
     color: var(--accent);
+}
+
+form{
+    margin-left: 40px;
 }
 .search-element{
     height: 50px;
@@ -94,10 +99,7 @@ header{
     padding-left: 40px;
     padding-right: 10px;
 }
-.title{
-    font-size: 22px; 
-    font-weight: bold;
-}
+
 .bold{
     font-weight: bold;
 }
@@ -106,48 +108,97 @@ header{
     box-shadow: 0 5px 35px 3px HSL(0, 0%, 90%);
 }
 
-.acc-container{
-    background: paleturquoise;
-    display: flex;
-    width: 100%;
+.acc-container{                   
+  background: gold;
+  padding: 20px;
+  display: flex;
 }
-
-.acc-main{
-    background: crimson;
-    display: flex;
-    flex-wrap: wrap;
-    flex: 2;
+.acc-title{
+    font-size: 22px; 
+    font-weight: bold;
+    padding-top: 40px;
+    padding-left: 40px;
+    background: var(--background);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
 }
-.card-main{
-    background: gainsboro;
-    border-radius: 20px;
-    margin: 10px;
-    width: calc(33.33% - 20px);
-    height: calc(50% - 20px);
-    overflow: hidden;
+.acc-main{                    
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  /* background: dodgerblue; */
+  padding: 20px;
+}
+.acc-main-cards{                   
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+  background: var(--background);
+}
+.card-main{               
+  background: white;
+  flex: 1 1 calc(33.33% - 30px);
+  margin: 15px;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 5px solid white;
+  height: calc(50% - 20px);
+}
+.card-details{
+    padding: 10px;
 }
 .img-main{
-    object-fit: cover;
-    width: 100%;
-    height: 60%;
+  object-fit: cover;
+  height: 60%;
+  width: 100%;
 }
 .acc-pop{
-    background: lemonchiffon;
-    display: flex;
-    flex-direction: column;
-    flex: 1;
+  flex: 1;
+  /* background: teal; */
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.acc-pop-cards{
+  flex: 1;
+  padding: 20px;
+  background: var(--background);
+  display: flex;
+  flex-direction: column;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
 }
 .card-pop{
-    background: gainsboro;
-    margin: 10px;
-    height: calc(33.33% - 20px);
-    width: calc(100% - 20px);
-    overflow: hidden;
+  background: white;
+  flex: 1;
+  margin: 15px;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 5px solid white;
+  display: flex;
+}
+.card-details-pop{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
 }
 .img-pop{
-    object-fit: cover;
-    width: 40%;
-    height: 100%;
+  object-fit: cover;
+  /* height: 100%; */
+  width: 40%;
+}
+.stars{
+    margin-top: auto;
+}
+.acc-plus{
+    font-size: 22px; 
+    font-weight: bold;
+    padding: 40px 40px 60px 40px;
+    background: var(--background);
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
 }
 
 
@@ -197,7 +248,15 @@ header{
     gap: 30px;
 }
 
-
+.blue-icon{
+    color: var(--accent);
+}
+.grey-icon{
+    color: var(--background);
+}
+.white-icon{
+    color: white;
+}
 .transparent{
     color: white;
 }
