@@ -1,4 +1,5 @@
 :root{
+    --box-shadow: 0 5px 35px 3px HSL(0, 0%, 90%);
     --border-radius: 20px;
     --margin-full: 60px;
     --margin-half: calc(var(--margin-full)/2);
@@ -105,7 +106,7 @@ form{
 }
 
 .shadow{
-    box-shadow: 0 5px 35px 3px HSL(0, 0%, 90%);
+    box-shadow: var(--box-shadow);
 }
 
 .acc-container{                   
@@ -113,28 +114,29 @@ form{
   padding: 20px;
   display: flex;
 }
-.acc-title{
+.acc-title, .acc-title-pop{
     font-size: 22px; 
     font-weight: bold;
-    padding-top: 40px;
-    padding-left: 40px;
-    background: var(--background);
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
+    margin-top: 30px;
+    margin-left: 35px; 
 }
+
 .acc-main{                    
   flex: 2;
   display: flex;
   flex-direction: column;
-  /* background: dodgerblue; */
+  background: dodgerblue;
   padding: 20px;
+  border-radius: var(--border-radius);
+  margin-right: 20px;
+  margin-left: 20px;
 }
 .acc-main-cards{                   
   flex: 1;
   display: flex;
   flex-wrap: wrap;
   padding: 20px;
-  background: var(--background);
+  background: rgb(255, 0, 212);
 }
 .card-main{               
   background: white;
@@ -143,7 +145,8 @@ form{
   border-radius: 20px;
   overflow: hidden;
   border: 5px solid white;
-  height: calc(50% - 20px);
+  height: calc(50% - 30px);
+  box-shadow: var(--box-shadow);
 }
 .card-details{
     padding: 10px;
@@ -155,19 +158,20 @@ form{
 }
 .acc-pop{
   flex: 1;
-  /* background: teal; */
+  background: teal;
   padding: 20px;
   display: flex;
   flex-direction: column;
+  border-radius: var(--border-radius);
+  margin-left: 20px;
+  margin-right: 20px;
 }
 .acc-pop-cards{
   flex: 1;
   padding: 20px;
-  background: var(--background);
+  background:rgb(255, 0, 212);
   display: flex;
   flex-direction: column;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
 }
 .card-pop{
   background: white;
@@ -177,6 +181,7 @@ form{
   overflow: hidden;
   border: 5px solid white;
   display: flex;
+  box-shadow: var(--box-shadow);
 }
 .card-details-pop{
   flex: 1;
@@ -186,7 +191,6 @@ form{
 }
 .img-pop{
   object-fit: cover;
-  /* height: 100%; */
   width: 40%;
 }
 .stars{
@@ -195,10 +199,8 @@ form{
 .acc-plus{
     font-size: 22px; 
     font-weight: bold;
-    padding: 40px 40px 60px 40px;
-    background: var(--background);
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
+    background: white;
+    margin: 40px;
 }
 
 
@@ -285,6 +287,9 @@ form{
     :root{
         font-size: 16px;
     }
+
+    /* header */
+
     header{
         flex-direction: column;
     }
@@ -304,6 +309,8 @@ form{
         border-bottom: 4px solid var(--accent);
     }
    
+    /* search form */
+
     #search-bar{
         width: calc(100% + 20px);   /* to compensate for moving the button left by 20px */
         position: relative;
@@ -334,7 +341,6 @@ form{
         display: block;
         position: relative;
         left: -45px;
-        /* background: red; */
         color: white;
         font-size: 18px;
     }
@@ -355,4 +361,50 @@ form{
     #search{
         margin: 20px;
     }
+
+    /* accommodation section */
+
+    .acc-container{
+        flex-direction: column-reverse;
+        padding: 0;
+    }
+    .acc-main{
+        background: white;
+    }
+    .acc-main, .acc-pop{
+        padding: 0;
+        margin: 0;
+    }
+    .acc-main-cards{
+        flex-direction: column;
+        background: paleturquoise;
+        
+    }
+    .acc-main, .acc-pop{
+        border-radius: 0;
+    }
+
+    /* trying to adjust main img height */
+    .card-main{
+        background: gold;
+        /* height: 100px; */
+
+    }
+    .img-main{             
+        /* height: 100%; */
+    }
+    .card-details{
+       /* height: 20%; */
+    }
+    /*                                   */
+
+    .acc-pop{
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .acc-title-pop{
+        width: 100%;
+    }
+
+    
 }
