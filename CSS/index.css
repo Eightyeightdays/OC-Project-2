@@ -132,7 +132,7 @@ form{
   margin-left: 20px;
 }
 .acc-main-cards{                   
-  flex: 1;
+  /* flex: 1; */
   display: flex;
   flex-wrap: wrap;
   padding: 20px;
@@ -367,9 +367,11 @@ form{
     .acc-container{
         flex-direction: column-reverse;
         padding: 0;
+        
     }
     .acc-main{
         background: white;
+        
     }
     .acc-main, .acc-pop{
         padding: 0;
@@ -387,14 +389,20 @@ form{
     /* trying to adjust main img height */
     .card-main{
         background: gold;
-        /* height: 100px; */
-
+        display: flex;
+        flex-direction: column;
+    }
+    .test{
+        display: flex ;
+        background: darkturquoise;
     }
     .img-main{             
-        /* height: 100%; */
+        height: 100%;
+       
     }
     .card-details{
-       /* height: 20%; */
+      background: palevioletred;
+      /* height: 30%; */
     }
     /*                                   */
 
