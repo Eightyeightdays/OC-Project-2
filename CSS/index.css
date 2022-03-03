@@ -11,7 +11,6 @@
     font-family: Raleway;
     font-size: 20px;
 }
-
 input[type="text"]{
     border: 1px solid var(--background);
     padding-left: 10px;
@@ -33,6 +32,9 @@ a:visited{
 a:hover, .button:hover, .filter:hover{
     cursor: pointer;
 }
+li a:hover{
+    text-decoration: underline 2px solid;
+}
 button{
     border: 0;
 }
@@ -42,7 +44,7 @@ header{
 .logo{
     width: 100px;
  }
- .logo-container{
+.logo-container{
     position: absolute;
     left: 0;
     height: min-content;
@@ -153,8 +155,6 @@ form{
   
 }
 .acc-main-cards{     
-                 
-  /* flex: 1; */
   display: flex;
   flex-wrap: wrap;
   padding: 5px;
@@ -166,7 +166,6 @@ form{
   border-radius: 20px;
   overflow: hidden;
   border: 5px solid white;
-  height: calc(50% - 30px);
   box-shadow: var(--box-shadow);
 }
 .card-details{
@@ -174,7 +173,7 @@ form{
 }
 .img-main{
   object-fit: cover;
-  height: 60%;
+  height: 160px;
   width: 100%;
 }
 .acc-pop{
@@ -316,32 +315,36 @@ form{
 .activity-main{
     margin: 20px;
     display: flex;
-    height: 75vh;   /* maybe set height here? */
 }
 .card-act{
-    flex: 1 1 calc(25% - 20px);
     margin: 20px;
     border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    box-shadow: var(--box-shadow);
-    
+}
+.column-single{
+    flex: 1 1 calc(25% - 20px);     
 }
 .column{
-    flex: 1 1 calc(25% - 20px);
+    flex: 1 1 calc(25% - 20px);   
     display: flex;
     flex-direction: column;
 }
 .img-act{
     object-fit: cover;
-    height: 100%;
+    height: 220px;
+    width: 100%;
+}
+.img-act-large{
+    object-fit: cover;
+    height: 545px;
     width: 100%;
 }
 .info{
     font-weight: bold;
     padding: 20px;
-    background: white;
 }
 .act-title{
     font-size: 26px;
@@ -378,6 +381,9 @@ li{
     align-items: center;
     font-weight: bold; 
 }
+
+/* TRANSITIONS */
+
 .filter:hover .box, .filter:hover .circle-bottom{
     color: white;
     background: var(--accent);
@@ -390,6 +396,26 @@ li{
     transition: all 450ms ease-out;
 }
 /* MEDIA QUERIES */
+
+/* TABLET */
+
+@media (max-width: 991px){
+    .acc-container{
+        flex-direction: column-reverse;
+    }
+    .img-pop{
+        height: 225px;
+    }
+    .acc-main{
+        margin-top: 40px;
+    }
+    .activity-main{
+        flex-wrap: wrap;
+    }
+    .column-single, .column{
+        flex: 1 1 calc(50% - 20px);
+    }
+}
 
 /* MOBILE */
 
@@ -432,10 +458,6 @@ li{
         border-right: 1px solid transparent;
         z-index: 1;
     }
-    ::placeholder{
-        color: black;
-        opacity: 1;
-    }
     .search-button{
         position: absolute;
         right: 20px;        /* in order to cover input section */
@@ -477,43 +499,20 @@ li{
     .acc-container{
         flex-direction: column-reverse;
         padding: 0;
-        
     }
     .acc-main{
         background: white;
-        
     }
     .acc-main, .acc-pop{
         padding: 0;
         margin: 0;
     }
     .acc-main-cards{
-        flex-direction: column;
-        background: paleturquoise;
-        
+        flex-direction: column; 
     }
     .acc-main, .acc-pop{
         border-radius: 0;
     }
-
-    /* trying to adjust main img height */
-    .card-main{
-        background: gold;
-        display: flex;
-        flex-direction: column;
-    }
-    .test{
-       
-        background: darkturquoise;
-    }
-    .img-main{             
-        /* height: 60%; */
-        object-fit: cover;
-    }
-    .card-details{
-      background: palevioletred;
-    }
-    /*^^^^          ^^^^*/
 
     .acc-pop{
         flex-direction: row;
@@ -532,9 +531,18 @@ li{
     .act-title{
         margin: 20px;
     }
+    .img-act, .img-act-large{
+        height: 218.4px;
+    }
+
+    /* footer section */
+    footer{
+        flex-direction: column;
+        padding: 20px;
+    }
 }
 
-@media (max-width:1315px){
-    .card-main, .card-pop{
-        font-size: 12px; 
-}
+
+
+
+
