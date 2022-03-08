@@ -292,7 +292,7 @@ footer{
     background: var(--background);
     padding: 40px;
 }
-section{
+footer div{
     display: flex;
     flex-direction: column;
     flex: 1;
@@ -370,7 +370,6 @@ input[type="text"]:focus{
     outline: none;
 }
 input:focus ~ button{
-    color: white;
     background: red;
 }
 button:focus{
@@ -478,6 +477,7 @@ a:focus .link{
         position: relative;
         width: 60px;
         z-index: 2;
+        color: red;
     }
     .transparent{
         color: transparent;
