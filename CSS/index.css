@@ -32,7 +32,13 @@ button{
 .bold{
     font-weight: bold;
 }
-
+h2{
+    font-size: 26px;
+}
+h3{
+    margin: 0;
+    font-size: 20px;
+}
 /* HEADER */
 
 header{
@@ -48,19 +54,29 @@ header{
 }
 #nav-links{
     min-width: 320px;
+    height: 150px;
+    margin-right: 40px;
+}
+#nav-links a{
+    height: 100%;
+    width: 50%;
 }
 .link{
     border-top: 4px solid transparent;
     width: 100%;
     transition: all 250ms ease-in-out;
 }
+#heading{
+    font-size: 24px;
+}
+#sub-heading{
+    font-size: 20px;
+    font-weight: normal;
+    margin-bottom: 0;
+}
 
 /* SEARCH FORM */
 
-form{
-    margin-left: 40px;
-    margin-right: 40px;
-}
 .fa-search{             /* magnifying glass icon */
     color: transparent;
     font-size: 0;
@@ -149,10 +165,14 @@ form{
     margin-left: 20px;
     padding: 20px;
   }
-.accommodation-title, .accommodation-title-pop{
+.accommodation-title{   /* , .accommodation-title-pop */
     font-size: 26px; 
     font-weight: bold;
     margin: 30px 20px 0 20px;
+}
+.accommodation-title-pop{
+    margin: 10px 20px -20px 20px;
+    
 }
 .main-cards-container{     
     display: flex;
@@ -298,6 +318,9 @@ footer div{
     flex: 1;
     padding: 10px;
 }
+footer h2{
+    font-size: 20px;
+}
 ul{
     list-style-type: none;
     padding: 0;
@@ -325,7 +348,7 @@ li{
     flex-wrap: wrap;
 }
 .basis{
-    flex: 1;
+    flex-basis: 50%;
 }
 
 /* MARGINS */
@@ -342,6 +365,13 @@ li{
 .margin-top-l{
     margin-top: 30px;
 } 
+.margin-vertical{
+    margin-left: 40px;
+    margin-right: 40px;
+}
+.margin-bottom{
+    margin-bottom: 20px;
+}
 .no-margin{
     margin: 0;
 }
@@ -435,6 +465,12 @@ a:focus .link{
     :root{
         font-size: 16px;
     }
+    #heading{
+        margin: 40px 20px 20px 20px;
+    }
+    #sub-heading{
+        margin: 0 20px 0 20px;
+    }
 
     /* header */
 
@@ -443,6 +479,7 @@ a:focus .link{
     }
     .logo-container{
         position: relative;
+        margin: 40px 0 20px 0;
     }
     #nav-links{
         width: 100%;
@@ -458,11 +495,13 @@ a:focus .link{
     }
    
     /* search form */
-
+    #search{
+        margin: 20px;
+    }
     #search-bar{
         width: calc(100% + 20px);   /* to compensate for moving the button left by 20px */
         position: relative;
-        
+        margin: 0;
     }
     input[type="text"]{
         width: 100%;
@@ -493,7 +532,7 @@ a:focus .link{
         margin: 5px;
     }
     #filter-box{
-        margin-top: 10px;
+        margin: 10px 0 10px 0;
     }
     #filter-label{
         margin-top: 20px;
@@ -503,8 +542,8 @@ a:focus .link{
     .gap{
         gap: 15px;
     }
-    #search{
-        margin: 20px;
+    #location-details{
+        margin: 20px 0;
     }
 
     /* accommodation section */
@@ -554,7 +593,3 @@ a:focus .link{
         padding: 20px;
     }
 }
-
-
-
-
